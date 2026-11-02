@@ -3,278 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>proshivka — Иван Xiaomi</title>
+    <title>Сайт-портфолио — proshivka</title>
     <link rel="icon" href="favicon.png" type="image/png">
     
-    <!-- Шрифты Google (Roboto и Google Sans) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Шрифт Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Стили -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Шапка сайта -->
-    <header class="header">
-        <div class="container header_container">
+    <!-- Шапка -->
+    <header>
+        <div class="container header_content">
             <div class="logo">
-                <img src="shto.png" alt="Аватарка" class="logo_img">
-                <span class="logo_text">proshivka</span>
+                <img src="shto.png" alt="Логотип">
+                <span>proshivka</span>
             </div>
-            
-            <nav class="nav_menu" id="navMenu">
-                <a href="#hero">Главная</a>
+            <nav>
                 <a href="#about">Обо мне</a>
-                <a href="#skills">Скиллы</a>
+                <a href="#skills">Навыки</a>
                 <a href="#projects">Проекты</a>
                 <a href="#gallery">Галерея</a>
+                <a href="https://t.me/prosh1vka" target="_blank">Контакты</a>
             </nav>
-
-            <button class="btn btn_primary" id="openModalBtn">Написать</button>
         </div>
     </header>
 
-    <main>
-        <!-- Главный экран (Hero) -->
-        <section class="hero" id="hero">
-            <div class="container hero_container">
-                <div class="hero_text">
-                    <span class="badge">Snapdragon 865 & Tensor G1</span>
-                    <h1>Привет, я <span class="purple_text">Иван Xiaomi</span></h1>
-                    <p class="hero_desc">
-                        Мне 16 лет. Занимаюсь Android разработкой, низкоуровневой кастомизацией, 
-                        восстановлением кирпичей и портированием систем на смартфоны. Люблю кодить и экспериментировать с железом.
-                    </p>
-                    
-                    <div class="hero_buttons">
-                        <button class="btn btn_primary" id="heroContactBtn">Связаться в Telegram</button>
-                        <a href="https://github.com/proshivka" target="_blank" class="btn btn_secondary">Мой GitHub</a>
-                    </div>
-                </div>
-
-                <div class="hero_card">
-                    <img src="shto.png" alt="Иван Xiaomi" class="avatar">
-                    <h3>@prosh1vka</h3>
-                    <p class="role">Android Hacker & Vibe Coder</p>
-                    
-                    <div class="info_grid">
-                        <div class="info_item">
-                            <span class="info_label">Устройства:</span>
-                            <span class="info_value">Snap 865 / Tensor</span>
-                        </div>
-                        <div class="info_item">
-                            <span class="info_label">UEFI:</span>
-                            <span class="info_value">Mu Silicium</span>
-                        </div>
-                        <div class="info_item">
-                            <span class="info_label">Языки:</span>
-                            <span class="info_value">C, Python, JS, ASM</span>
-                        </div>
-                        <div class="info_item">
-                            <span class="info_label">Статус:</span>
-                            <span class="info_value online">● В сети</span>
-                        </div>
-                    </div>
+    <div class="container">
+        <!-- Главный экран -->
+        <div class="hero">
+            <div class="hero_info">
+                <span class="badge">Snapdragon 865 & Google Tensor G1</span>
+                <h1>Привет, я <span class="purple">Иван Xiaomi</span></h1>
+                <p>
+                    Мне 16 лет. Увлекаюсь низкоуровневой Android разработкой, портированием прошивок, 
+                    восстановлением кирпичей и вайбкодингом. Мой стек: C, Python, HTML, JavaScript и ассемблер ARM64.
+                </p>
+                <div>
+                    <a href="https://t.me/prosh1vka" target="_blank" class="btn">Написать в Telegram</a>
+                    <a href="https://github.com/proshivka" target="_blank" class="btn btn_outline">Мой GitHub</a>
                 </div>
             </div>
-        </section>
-
-        <!-- Языки и стек -->
-        <section class="stack_section">
-            <div class="container">
-                <div class="stack_box">
-                    <span class="stack_title">Мой стек:</span>
-                    <div class="stack_tags">
-                        <span class="tag">C</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">HTML / CSS</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">ASM (ARM64)</span>
-                    </div>
-                </div>
+            <div>
+                <img src="shto.png" alt="Аватарка" class="avatar">
             </div>
-        </section>
+        </div>
 
         <!-- Обо мне -->
-        <section class="about" id="about">
-            <div class="container">
-                <div class="section_title">
-                    <h2>Обо мне</h2>
-                    <p>Чем я занимаюсь в свободное время</p>
-                </div>
-
-                <div class="about_grid">
-                    <div class="card about_card">
-                        <h3>⚡ Кастомные прошивки и ядро</h3>
-                        <p>
-                            Собираю кастомные ядра под Snapdragon 865, настраиваю планировщики, вшиваю KernelSU и оптимизирую работу системы под плавный фреймрейт.
-                        </p>
-                    </div>
-
-                    <div class="card about_card">
-                        <h3>💻 Windows on ARM</h3>
-                        <p>
-                            Экспериментирую с портированием UEFI проекта Mu Silicium для запуска настольной Windows 11 на смартфонах Xiaomi.
-                        </p>
-                    </div>
-
-                    <div class="card about_card">
-                        <h3>🛡️ Восстановление устройств</h3>
-                        <p>
-                            Умею оживлять мертвые телефоны из режима Qualcomm EDL 9008, шить через протокол Sahara и обходить программные блокировки.
-                        </p>
-                    </div>
-                </div>
+        <section id="about">
+            <h2>Обо мне</h2>
+            <div class="card">
+                <p>
+                    Я занимаюсь изучением мобильных чипсетов и операционных систем. Специализируюсь на сборке кастомных ядер, 
+                    портировании UEFI для проекта Mu Silicium (запуск Windows на ARM процессорах) и сервисном восстановлении телефонов.
+                    Люблю доводить железо до идеала и писать понятный полезный софт.
+                </p>
             </div>
         </section>
 
-        <!-- Мои скиллы (3 колонки без процентов) -->
-        <section class="skills" id="skills">
-            <div class="container">
-                <div class="section_title">
-                    <h2>Мои навыки</h2>
-                    <p>Основные направления, в которых я развиваюсь</p>
+        <!-- Навыки (3 колонки без процентов) -->
+        <section id="skills">
+            <h2>Мои навыки</h2>
+            <div class="grid_3">
+                <div class="card">
+                    <h3>🔧 EDL 9008 & Sahara</h3>
+                    <p>
+                        Восстановление окирпиченных устройств в аварийном режиме Qualcomm 9008, прошивка через Firehose и раскирпичивание загрузчиков.
+                    </p>
                 </div>
 
-                <div class="skills_grid">
-                    <div class="card skill_card">
-                        <div class="skill_icon">🔧</div>
-                        <h3>Восстановление «кирпичей» и EDL 9008</h3>
-                        <p>
-                            Поднятие смартфонов, которые не включаются и определяются только в аварийном режиме Qualcomm 9008. Работа с лоадерами Firehose и восстановление разметки GPT.
-                        </p>
-                    </div>
+                <div class="card">
+                    <h3>📱 Custom ROM & HyperOS</h3>
+                    <p>
+                        Сборка кастомных прошивок под девайсы на Snapdragon 865 и Google Tensor, правка вендорных блобов, AOSP и Treble.
+                    </p>
+                </div>
 
-                    <div class="card skill_card">
-                        <div class="skill_icon">📱</div>
-                        <h3>Сборка Custom ROM & Портирование</h3>
-                        <p>
-                            Сборка кастомных прошивок (AOSP / HyperOS), адаптация вендорных блобов, девайс-три и правка багов под Snapdragon 865 и Google Tensor.
-                        </p>
-                    </div>
-
-                    <div class="card skill_card">
-                        <div class="skill_icon">✨</div>
-                        <h3>Вайбкодинг (Vibe Coding)</h3>
-                        <p>
-                            100% искренний вайбкодинг: быстрое написание скриптов, фиксов и утилит на чистом интересе, помощь нейросетей и ночные тесты прошивок.
-                        </p>
-                    </div>
+                <div class="card">
+                    <h3>✨ 100% Вайбкодинг</h3>
+                    <p>
+                        Быстрая разработка утилит, написание скриптов на чистом интересе, эксперименты с кодом и ночные тесты прошивок.
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- Проекты -->
-        <section class="projects" id="projects">
-            <div class="container">
-                <div class="section_title">
-                    <h2>Мои проекты</h2>
-                    <p>Навайбкожено с душой</p>
+        <section id="projects">
+            <h2>Проекты</h2>
+            <div class="grid_2">
+                <div class="card">
+                    <h3>Mu Silicium SM8250 Port</h3>
+                    <p>Портирование UEFI окружения для запуска Windows 11 на смартфонах с процессором Snapdragon 865.</p>
                 </div>
 
-                <div class="projects_grid">
-                    <div class="card project_card">
-                        <h3>Mu Silicium SM8250 Port</h3>
-                        <p>Порт UEFI загрузчика для запуска Windows 11 на чипсете Snapdragon 865.</p>
-                        <div class="project_footer">
-                            <span class="project_tag">C • UEFI</span>
-                            <a href="https://github.com/proshivka" target="_blank" class="link">GitHub &rarr;</a>
-                        </div>
-                    </div>
+                <div class="card">
+                    <h3>Кастомные сборки AOSP</h3>
+                    <p>Оптимизированные порты чистого Android с минимальным потреблением аккумулятора.</p>
+                </div>
 
-                    <div class="card project_card">
-                        <h3>HyperOS / AOSP Ports</h3>
-                        <p>Портирование чистых и кастомных сборок на неподдерживаемые устройства.</p>
-                        <div class="project_footer">
-                            <span class="project_tag">Android • ROM</span>
-                            <a href="https://github.com/proshivka" target="_blank" class="link">GitHub &rarr;</a>
-                        </div>
-                    </div>
+                <div class="card">
+                    <h3>Xiaomi EDL Sahara Tool</h3>
+                    <p>Python-скрипты для раскирпичивания аппаратов и записи разметки разделов.</p>
+                </div>
 
-                    <div class="card project_card">
-                        <h3>Xiaomi EDL Sahara Unbrick</h3>
-                        <p>Скрипты для прошивки и раскирпичивания аппаратов через режим 9008.</p>
-                        <div class="project_footer">
-                            <span class="project_tag">Python • EDL</span>
-                            <a href="https://github.com/proshivka" target="_blank" class="link">GitHub &rarr;</a>
-                        </div>
-                    </div>
-
-                    <div class="card project_card">
-                        <h3>Kernel Tweaks & Tools</h3>
-                        <p>Кастомные патчи ядра, интеграция KernelSU и твики планировщика.</p>
-                        <div class="project_footer">
-                            <span class="project_tag">Linux • C</span>
-                            <a href="https://github.com/proshivka" target="_blank" class="link">GitHub &rarr;</a>
-                        </div>
-                    </div>
+                <div class="card">
+                    <h3>Твики ядра Linux</h3>
+                    <p>Настройка планировщика CPU, интеграция KernelSU и андервольтинг.</p>
                 </div>
             </div>
         </section>
 
         <!-- Галерея -->
-        <section class="gallery" id="gallery">
-            <div class="container">
-                <div class="section_title">
-                    <h2>Галерея</h2>
-                    <p>Скриншоты и фотки</p>
-                </div>
-
-                <div class="gallery_grid">
-                    <div class="gallery_item">
-                        <img src="img/gallery1.png" alt="Скриншот 1">
-                    </div>
-                    <div class="gallery_item">
-                        <img src="img/gallery2.png" alt="Скриншот 2">
-                    </div>
-                    <div class="gallery_item">
-                        <img src="img/gallery1.png" alt="Скриншот 3">
-                    </div>
-                    <div class="gallery_item">
-                        <img src="img/gallery2.png" alt="Скриншот 4">
-                    </div>
-                </div>
+        <section id="gallery">
+            <h2>Галерея</h2>
+            <div class="gallery_grid">
+                <img src="img/gallery1.png" alt="Скриншот 1">
+                <img src="img/gallery2.png" alt="Скриншот 2">
+                <img src="img/gallery1.png" alt="Скриншот 3">
+                <img src="img/gallery2.png" alt="Скриншот 4">
             </div>
         </section>
-    </main>
-
-    <!-- Подвал сайта -->
-    <footer class="footer">
-        <div class="container footer_container">
-            <div class="footer_left">
-                <h3>Иван Xiaomi</h3>
-                <p>&copy; 2026. Мой личный сайт-портфолио.</p>
-            </div>
-            <div class="footer_right">
-                <a href="https://t.me/prosh1vka" target="_blank" class="footer_link">Telegram: @prosh1vka</a>
-                <a href="https://github.com/proshivka" target="_blank" class="footer_link">GitHub</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Простое модальное окно обратной связи -->
-    <div class="modal" id="contactModal">
-        <div class="modal_content">
-            <span class="close_btn" id="closeModalBtn">&times;</span>
-            <h2>Написать мне</h2>
-            <p class="modal_subtitle">Быстрее всего отвечаю в телеге:</p>
-            
-            <div class="tg_box">
-                <strong>Telegram:</strong> @prosh1vka
-                <button class="btn btn_small" id="copyBtn">Скопировать</button>
-            </div>
-
-            <form id="simpleForm">
-                <input type="text" placeholder="Ваше имя" required class="input_field" id="userName">
-                <textarea placeholder="Сообщение или вопрос..." rows="4" required class="input_field" id="userMsg"></textarea>
-                <button type="submit" class="btn btn_primary" style="width: 100%;">Отправить в Telegram</button>
-            </form>
-        </div>
     </div>
 
-    <!-- Простой скрипт -->
-    <script src="js/myscript.js"></script>
+    <!-- Подвал -->
+    <footer>
+        <p>&copy; 2026 Иван Xiaomi (@prosh1vka). Сайт-портфолио.</p>
+        <p>
+            <a href="https://t.me/prosh1vka" target="_blank">Telegram</a> |
+            <a href="https://github.com/proshivka" target="_blank">GitHub</a>
+        </p>
+    </footer>
+
 </body>
 </html>
