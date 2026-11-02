@@ -1,9 +1,9 @@
 {
-  "version": "1.3.5.0",
-  "versionCode": 1030500,
+  "version": "1.3.6.0",
+  "versionCode": 1030600,
   "releaseDate": "2026-11-02",
-  "title": "LANE Music v1.3.5.0 (OTA Release)",
-  "changelog": "• Встроенная поддержка беспроводных обновлений (OTA)\n• Прямая загрузка релизов с proshivka.github.io\n• Персональные миксы дня на главной («Добрый день Mix», «Доброй ночи Mix»)\n• Горизонтальная карусель «Недавно прослушано» для быстрого запуска плейлистов\n• Быстрый переход к плейлистам из медиатеки\n• Полноценный фоновый звук при блокировке экрана\n• 4-полосный эквалайзер с BASS BOOST (+14 dB)",
+  "title": "LANE Music v1.3.6.0",
+  "changelog": "• Исправлено всплывающее окно обновления (OTA Dialog)\n• Прямая загрузка релизов и установка в 1 тап\n• Персональные миксы дня («Добрый день Mix», «Доброй ночи Mix»)\n• Горизонтальная карусель «Недавно прослушано»\n• Улучшена плавность скролла и блокировка ложных свайпов\n• 4-полосный эквалайзер с BASS BOOST (+14 dB)",
   "downloadUrl": "https://proshivka.github.io/lane/LaneMusic.appxbundle",
   "certUrl": "https://proshivka.github.io/lane/LaneMusic.cer",
   "winArchiveUrl": "https://winarchive.org/store/app/?id=2030",
