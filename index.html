@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@1..144,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Внешний файл стилей -->
-    <link rel="stylesheet" href="css/style.css?v=5">
+    <link rel="stylesheet" href="css/style.css?v=6">
 
     <!-- Встроенные стили для моментальной загрузки без задержек кэша -->
     <style>
@@ -32,8 +32,8 @@
         .hero_info h1 { font-size: 40px; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
         .hero_info h1 span { color: #c792ea; text-shadow: 0 0 14px rgba(199, 146, 234, 0.6), 0 0 28px rgba(199, 146, 234, 0.3); }
         .hero_info p { color: #a8a8ba; font-size: 16px; margin-bottom: 26px; line-height: 1.65; }
-        .avatar { width: 180px; height: 180px; min-width: 180px; max-width: 180px; border-radius: 28px; border: 3px solid #c792ea; box-shadow: 0 0 24px rgba(199, 146, 234, 0.4), 0 10px 30px rgba(0, 0, 0, 0.5); object-fit: cover; transition: transform 0.3s, box-shadow 0.3s; }
-        .avatar:hover { transform: scale(1.03); box-shadow: 0 0 32px rgba(199, 146, 234, 0.65); }
+        .avatar { width: 280px; height: 280px; min-width: 280px; max-width: 280px; border: none; box-shadow: none; object-fit: contain; filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.65)); transition: transform 0.3s ease; }
+        .avatar:hover { transform: scale(1.05); }
         .btn { display: inline-block; background-color: #c792ea; color: #12101a; padding: 11px 24px; border-radius: 50px; font-weight: 700; font-size: 15px; box-shadow: 0 0 16px rgba(199, 146, 234, 0.45); transition: all 0.2s ease-in-out; }
         .btn:hover { background-color: #dbb3f6; box-shadow: 0 0 25px rgba(199, 146, 234, 0.8); transform: translateY(-2px); }
         .btn_outline { background-color: transparent; color: #c792ea; border: 1px solid #c792ea; box-shadow: 0 0 12px rgba(199, 146, 234, 0.25); margin-left: 12px; }
@@ -62,6 +62,7 @@
         footer a:hover { text-shadow: 0 0 8px rgba(199, 146, 234, 0.6); }
         @media (max-width: 768px) {
             .hero { flex-direction: column; text-align: center; }
+            .avatar { width: 220px; height: 220px; min-width: 220px; max-width: 220px; }
             .grid_3, .grid_2 { grid-template-columns: 1fr; }
             .gallery_grid { grid-template-columns: 1fr 1fr; }
             nav { display: none; }
@@ -103,7 +104,7 @@
                 </div>
             </div>
             <div>
-                <img src="shto.png" alt="Аватарка" class="avatar" width="180" height="180">
+                <img src="shto.png" alt="Аватарка" class="avatar" width="280" height="280">
             </div>
         </div>
 
