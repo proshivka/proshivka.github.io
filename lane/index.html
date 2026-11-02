@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANE Music for Windows 10 Mobile — proshivka</title>
+    <meta name="description" content="LANE Music — первый и полноценный UWP-клиент музыкального сервиса LANE для смартфонов Lumia на Windows 10 Mobile. Скачать .appxbundle.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://proshivka.github.io/lane/">
+    <meta property="og:title" content="LANE Music for Windows 10 Mobile">
+    <meta property="og:description" content="Неофициальный нативный клиент LANE для Windows 10 Mobile. Миксы дня, фоновое воспроизведение, эквалайзер, поддержка Spotify и SoundCloud.">
+    <meta property="og:image" content="https://proshivka.github.io/lane/img/banner.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="../favicon.png" type="image/png">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #0c0c10; color: #e4e1e9; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        .container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        header { background-color: rgba(18, 18, 24, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 14px 0; border-bottom: 1px solid #232332; position: sticky; top: 0; z-index: 100; }
+        .header_content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-size: 19px; font-weight: 700; color: #e51c23; text-shadow: 0 0 14px rgba(229, 28, 35, 0.5); }
+        .logo img { width: 34px; height: 34px; border-radius: 8px; object-fit: contain; }
+        nav a { margin-left: 20px; color: #a4a4b8; font-weight: 500; font-size: 14px; transition: all 0.2s; }
+        nav a:hover { color: #e51c23; }
+
+        /* Hero */
+        .hero { padding: 48px 0 36px; display: flex; align-items: center; justify-content: space-between; gap: 36px; }
+        .hero_info { flex: 1; }
+        .badge { background-color: #1f1418; color: #ff5252; border: 1px solid rgba(229, 28, 35, 0.45); box-shadow: 0 0 14px rgba(229, 28, 35, 0.25); padding: 6px 14px; border-radius: 50px; font-size: 12.5px; font-weight: 700; display: inline-block; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .hero_info h1 { font-size: 38px; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .hero_info h1 span { color: #e51c23; text-shadow: 0 0 16px rgba(229, 28, 35, 0.6); }
+        .hero_info p { color: #a2a2b6; font-size: 15.5px; margin-bottom: 26px; line-height: 1.65; }
+
+        .banner_wrap { width: 340px; min-width: 300px; }
+        .banner_img { width: 100%; border-radius: 16px; border: 1px solid #282838; box-shadow: 0 12px 30px rgba(0,0,0,0.7), 0 0 20px rgba(229, 28, 35, 0.2); }
+
+        /* Buttons */
+        .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #e51c23; color: #ffffff; padding: 12px 24px; border-radius: 50px; font-weight: 700; font-size: 14.5px; box-shadow: 0 0 16px rgba(229, 28, 35, 0.45); transition: all 0.2s ease-in-out; }
+        .btn:hover { background-color: #ff333a; box-shadow: 0 0 26px rgba(229, 28, 35, 0.8); transform: translateY(-2px); }
+        .btn_outline { background-color: #171720; color: #e51c23; border: 1px solid rgba(229, 28, 35, 0.5); box-shadow: none; }
+        .btn_outline:hover { background-color: #24161a; box-shadow: 0 0 18px rgba(229, 28, 35, 0.4); }
+        .btn_secondary { background-color: #1b1b26; color: #c4c4d6; border: 1px solid #2e2e42; box-shadow: none; }
+        .btn_secondary:hover { background-color: #242434; color: #ffffff; border-color: #424260; }
+
+        /* Meta Pills */
+        .meta_bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 34px; padding: 12px 16px; background: #13131c; border-radius: 14px; border: 1px solid #232332; font-size: 13px; color: #8e8ea6; }
+        .meta_item strong { color: #ffffff; }
+
+        /* Section Header */
+        section { padding: 32px 0; }
+        h2 { font-size: 26px; font-weight: 700; margin-bottom: 22px; color: #ffffff; text-align: center; }
+        h2 span { color: #e51c23; }
+
+        /* Features Grid */
+        .grid_3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .card { background-color: #14141e; border: 1px solid #242436; border-radius: 18px; padding: 22px; transition: all 0.25s ease; position: relative; }
+        .card:hover { border-color: #e51c23; box-shadow: 0 0 20px rgba(229, 28, 35, 0.2); transform: translateY(-3px); }
+        .card_icon { font-size: 26px; margin-bottom: 12px; display: inline-block; }
+        .card h3 { font-size: 17px; font-weight: 700; color: #ffffff; margin-bottom: 8px; }
+        .card p { color: #9494aa; font-size: 13.5px; line-height: 1.55; }
+
+        /* Screenshots */
+        .screens_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 10px; }
+        .screen_card { background: #111118; border: 1px solid #222232; border-radius: 18px; padding: 12px; text-align: center; transition: all 0.25s ease; }
+        .screen_card:hover { border-color: #e51c23; transform: scale(1.02); }
+        .screen_card img { width: 100%; border-radius: 12px; display: block; box-shadow: 0 6px 18px rgba(0,0,0,0.6); }
+        .screen_caption { font-size: 12.5px; color: #8e8ea6; margin-top: 10px; font-weight: 600; }
+
+        /* Steps */
+        .steps_list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+        .step_item { display: flex; gap: 16px; background: #14141e; border: 1px solid #242436; padding: 16px 20px; border-radius: 14px; align-items: flex-start; }
+        .step_num { background: #e51c23; color: #ffffff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+        .step_content h4 { font-size: 15px; font-weight: 700; color: #ffffff; margin-bottom: 4px; }
+        .step_content p { font-size: 13px; color: #9494aa; line-height: 1.5; }
+
+        /* Boosty banner */
+        .boosty_box { background: linear-gradient(135deg, #1b1216 0%, #161622 100%); border: 1.5px solid #f15f2c; border-radius: 20px; padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 24px; box-shadow: 0 0 25px rgba(241, 95, 44, 0.25); }
+        .boosty_info { display: flex; align-items: center; gap: 16px; }
+        .boosty_logo { width: 48px; height: 48px; border-radius: 10px; object-fit: contain; }
+        .boosty_btn { background: #f15f2c; color: #fff; padding: 11px 22px; border-radius: 50px; font-weight: 700; font-size: 14px; transition: all 0.2s; white-space: nowrap; }
+        .boosty_btn:hover { background: #ff7442; transform: translateY(-2px); box-shadow: 0 0 20px rgba(241, 95, 44, 0.6); }
+
+        /* Footer */
+        footer { background-color: #08080c; padding: 28px 0; margin-top: 48px; border-top: 1px solid #1a1a24; text-align: center; color: #727288; font-size: 13px; }
+        footer a { color: #e51c23; margin: 0 8px; }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; }
+            .banner_wrap { width: 100%; max-width: 320px; margin: 0 auto; }
+            .actions { justify-content: center; }
+            .grid_3 { grid-template-columns: 1fr; }
+            .screens_grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+            .boosty_box { flex-direction: column; text-align: center; }
+            .boosty_info { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="container header_content">
+            <a href="https://proshivka.github.io/" class="logo">
+                <img src="img/logo.png" alt="LANE">
+                <span>LANE UWP</span>
+            </a>
+            <nav>
+                <a href="https://proshivka.github.io/">Главная</a>
+                <a href="#features">Возможности</a>
+                <a href="#install">Установка</a>
+                <a href="https://winarchive.org/store/app/?id=2030" target="_blank">WinArchive</a>
+                <a href="https://boosty.to/prosh1vka" target="_blank">Boosty</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Главный экран -->
+        <div class="hero">
+            <div class="hero_info">
+                <div class="badge">Windows 10 Mobile Release</div>
+                <h1>LANE Music <span>UWP</span></h1>
+                <p>
+                    Первый и полноценный неофициальный клиент музыкального сервиса <strong>LANE</strong> для смартфонов Lumia.
+                    Создан специально для Windows 10 Mobile: чистый AMOLED-чёрный Metro-дизайн, фоновое воспроизведение при заблокированном экране и встроенные OTA-обновления.
+                </p>
+                <div class="actions">
+                    <a href="LaneMusic.appxbundle" download class="btn">
+                        <span>📥</span> Скачать .appxbundle (v1.3.4.0)
+                    </a>
+                    <a href="LaneMusic.cer" download class="btn btn_outline">
+                        <span>🔑</span> Сертификат (.cer)
+                    </a>
+                    <a href="https://winarchive.org/store/app/?id=2030" target="_blank" class="btn btn_secondary">
+                        <span>🌐</span> WinArchive Store
+                    </a>
+                </div>
+            </div>
+            <div class="banner_wrap">
+                <img src="img/banner.png" alt="LANE Music Banner" class="banner_img">
+            </div>
+        </div>
+
+        <!-- Полоса метаданных -->
+        <div class="meta_bar">
+            <div class="meta_item">Версия: <strong>1.3.4.0</strong></div>
+            <div class="meta_item">ОС: <strong>Windows 10 Mobile 1511+ (10586 - 15254)</strong></div>
+            <div class="meta_item">Архитектура: <strong>ARM / x86 / x64</strong></div>
+            <div class="meta_item">Размер: <strong>147 КБ</strong></div>
+            <div class="meta_item">Обновления: <strong>Встроенные OTA</strong></div>
+        </div>
+
+        <!-- Ключевые возможности -->
+        <section id="features">
+            <h2>Возможности <span>клиента</span></h2>
+            <div class="grid_3">
+                <div class="card">
+                    <div class="card_icon">🌅</div>
+                    <h3>Миксы дня</h3>
+                    <p>Адаптивные подборки под время суток («Добрый день Mix», «Доброй ночи Mix» и др.) с персональными рекомендациями под ваш профиль.</p>
+                </div>
+                <div class="card">
+                    <div class="card_icon">🔒</div>
+                    <h3>Фоновое воспроизведение</h3>
+                    <p>Музыка продолжает непрерывно играть при блокировке экрана прямо из приложения благодаря интеграции с нативным SMTC.</p>
+                </div>
+                <div class="card">
+                    <div class="card_icon">🎚️</div>
+                    <h3>BASS BOOST и эквалайзер</h3>
+                    <p>Аппаратный 4-полосный Web Audio эквалайзер с регулировкой частот и тумблером усиления низких частот (+14 dB).</p>
+                </div>
+                <div class="card">
+                    <div class="card_icon">⚡</div>
+                    <h3>Молниеносный старт (0 ms)</h3>
+                    <p>Двухуровневое кэширование медиатеки и URL аудиопотоков: интерфейс и любимые треки открываются мгновенно даже без интернета.</p>
+                </div>
+                <div class="card">
+                    <div class="card_icon">🖤</div>
+                    <h3>AMOLED Metro / Pivot</h3>
+                    <p>Истинный глубокий черный фон (#000000) для экономии батареи на OLED-дисплеях Lumia и классические плавные свайпы.</p>
+                </div>
+                <div class="card">
+                    <div class="card_icon">🔄</div>
+                    <h3>Встроенные OTA-обновления</h3>
+                    <p>Клиент автоматически проверяет свежие релизы через GitHub Pages и позволяет обновиться в один клик без потери данных.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Скриншоты с реальной Lumia 650 -->
+        <section id="screenshots">
+            <h2>Интерфейс на <span>Lumia</span></h2>
+            <div class="screens_grid">
+                <div class="screen_card">
+                    <img src="img/screen1.png" alt="Главная и миксы дня">
+                    <div class="screen_caption">«Моя музыка» и Миксы дня</div>
+                </div>
+                <div class="screen_card">
+                    <img src="img/screen2.png" alt="Плеер и обложка">
+                    <div class="screen_caption">Полноэкранный плеер</div>
+                </div>
+                <div class="screen_card">
+                    <img src="img/screen3.png" alt="Список приложений">
+                    <div class="screen_caption">Интеграция в систему</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Инструкция по установке -->
+        <section id="install">
+            <h2>Как <span>установить</span></h2>
+            <div class="steps_list">
+                <div class="step_item">
+                    <div class="step_num">1</div>
+                    <div class="step_content">
+                        <h4>Скачайте сертификат и приложение</h4>
+                        <p>Загрузите файлы <code>LaneMusic.cer</code> и <code>LaneMusic.appxbundle</code> на телефон через браузер или скопируйте по кабелю в папку <i>Downloads (Загрузки)</i>.</p>
+                    </div>
+                </div>
+                <div class="step_item">
+                    <div class="step_num">2</div>
+                    <div class="step_content">
+                        <h4>Установите сертификат</h4>
+                        <p>В Проводнике телефона нажмите на файл <code>LaneMusic.cer</code> и установите его в хранилище <strong>«Доверенные корневые центры сертификации» (Root)</strong>.</p>
+                    </div>
+                </div>
+                <div class="step_item">
+                    <div class="step_num">3</div>
+                    <div class="step_content">
+                        <h4>Установите .appxbundle</h4>
+                        <p>Нажмите на файл <code>LaneMusic.appxbundle</code> и подтвердите установку в системном установщике Windows Phone. Приложение появится в списке меню Пуск.</p>
+                    </div>
+                </div>
+                <div class="step_item">
+                    <div class="step_num">4</div>
+                    <div class="step_content">
+                        <h4>Вставьте JWT-токен LANE</h4>
+                        <p>Откройте приложение, зайдите в <strong>Параметры</strong> (шестерёнка) и вставьте токен вашего аккаунта LANE (начинается с <code>eyJ...</code>).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок Boosty -->
+        <div class="boosty_box">
+            <div class="boosty_info">
+                <img src="img/boosty.png" alt="Boosty" class="boosty_logo">
+                <div>
+                    <h3 style="color:#ffffff; font-size:18px; margin-bottom:4px;">Понравился порт? Поддержи автора!</h3>
+                    <p style="color:#c4a49c; font-size:13.5px;">Подписка или донат на Boosty мотивируют развивать клиент и портировать новые приложения для Windows Phone.</p>
+                </div>
+            </div>
+            <a href="https://boosty.to/prosh1vka" target="_blank" class="boosty_btn">Перейти на Boosty &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer>
+        <p>&copy; 2026 Иван Xiaomi (<a href="https://t.me/prosh1vka" target="_blank">@prosh1vka</a>) & Google DeepMind (Antigravity). Credits: LANE Developers.</p>
+        <p style="margin-top:8px;">
+            <a href="https://proshivka.github.io/">Портфолио</a> |
+            <a href="https://github.com/proshivka" target="_blank">GitHub</a> |
+            <a href="https://boosty.to/prosh1vka" target="_blank">Boosty</a> |
+            <a href="https://winarchive.org/store/app/?id=2030" target="_blank">WinArchive</a>
+        </p>
+    </footer>
+
+</body>
+</html>
