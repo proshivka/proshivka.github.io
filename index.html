@@ -11,7 +11,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@1..144,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Внешний файл стилей -->
+    <link rel="stylesheet" href="css/style.css?v=5">
+
+    <!-- Встроенные стили для моментальной загрузки без задержек кэша -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #0f0f14; color: #e4e1e9; font-family: 'Google Sans Flex', 'Plus Jakarta Sans', sans-serif; line-height: 1.6; }
+        a { color: inherit; text-decoration: none; }
+        .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+        header { background-color: rgba(22, 22, 30, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 16px 0; border-bottom: 1px solid #282838; position: sticky; top: 0; z-index: 100; }
+        .header_content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-size: 20px; font-weight: 700; color: #c792ea; text-shadow: 0 0 12px rgba(199, 146, 234, 0.5); }
+        .logo img { width: 36px; height: 36px; min-width: 36px; max-width: 36px; border-radius: 50%; border: 2px solid #c792ea; box-shadow: 0 0 10px rgba(199, 146, 234, 0.4); object-fit: cover; }
+        nav a { margin-left: 22px; color: #b0b0c2; font-weight: 500; font-size: 15px; transition: all 0.2s; }
+        nav a:hover { color: #c792ea; text-shadow: 0 0 8px rgba(199, 146, 234, 0.6); }
+        .hero { padding: 60px 0 40px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+        .hero_info { flex: 1; }
+        .badge { background-color: #211f2d; color: #c792ea; border: 1px solid rgba(199, 146, 234, 0.4); box-shadow: 0 0 14px rgba(199, 146, 234, 0.2); padding: 6px 14px; border-radius: 50px; font-size: 13px; font-weight: 600; display: inline-block; margin-bottom: 16px; }
+        .hero_info h1 { font-size: 40px; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .hero_info h1 span { color: #c792ea; text-shadow: 0 0 14px rgba(199, 146, 234, 0.6), 0 0 28px rgba(199, 146, 234, 0.3); }
+        .hero_info p { color: #a8a8ba; font-size: 16px; margin-bottom: 26px; line-height: 1.65; }
+        .avatar { width: 180px; height: 180px; min-width: 180px; max-width: 180px; border-radius: 28px; border: 3px solid #c792ea; box-shadow: 0 0 24px rgba(199, 146, 234, 0.4), 0 10px 30px rgba(0, 0, 0, 0.5); object-fit: cover; transition: transform 0.3s, box-shadow 0.3s; }
+        .avatar:hover { transform: scale(1.03); box-shadow: 0 0 32px rgba(199, 146, 234, 0.65); }
+        .btn { display: inline-block; background-color: #c792ea; color: #12101a; padding: 11px 24px; border-radius: 50px; font-weight: 700; font-size: 15px; box-shadow: 0 0 16px rgba(199, 146, 234, 0.45); transition: all 0.2s ease-in-out; }
+        .btn:hover { background-color: #dbb3f6; box-shadow: 0 0 25px rgba(199, 146, 234, 0.8); transform: translateY(-2px); }
+        .btn_outline { background-color: transparent; color: #c792ea; border: 1px solid #c792ea; box-shadow: 0 0 12px rgba(199, 146, 234, 0.25); margin-left: 12px; }
+        .btn_outline:hover { background-color: #211f2d; box-shadow: 0 0 20px rgba(199, 146, 234, 0.5); }
+        .stack_box { background-color: #161620; border: 1px solid #282838; border-radius: 20px; padding: 16px 22px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 30px; }
+        .stack_title { font-weight: 700; font-size: 14px; color: #c792ea; text-shadow: 0 0 8px rgba(199, 146, 234, 0.4); }
+        .tag { background-color: #201f2c; border: 1px solid #363448; color: #e4e1e9; padding: 5px 12px; border-radius: 50px; font-size: 13px; font-weight: 600; }
+        section { padding: 40px 0; }
+        h2 { font-size: 28px; font-weight: 700; margin-bottom: 24px; text-align: center; color: #c792ea; text-shadow: 0 0 14px rgba(199, 146, 234, 0.45); }
+        .card { background-color: #161620; border: 1px solid #282838; border-radius: 22px; padding: 24px; transition: all 0.25s ease; position: relative; }
+        .card:hover { border-color: #c792ea; box-shadow: 0 0 20px rgba(199, 146, 234, 0.25); transform: translateY(-4px); }
+        .card h3 { margin-bottom: 10px; font-size: 18px; font-weight: 700; color: #ffffff; }
+        .card p { color: #a4a4b8; font-size: 14px; line-height: 1.6; }
+        .card_featured { border: 1.5px solid #c792ea; box-shadow: 0 0 16px rgba(199, 146, 234, 0.3); }
+        .card_featured:hover { box-shadow: 0 0 28px rgba(199, 146, 234, 0.55); }
+        .project_badge { position: absolute; top: 20px; right: 20px; font-size: 11px; font-weight: 700; text-transform: uppercase; background-color: #c792ea; color: #12101a; padding: 3px 10px; border-radius: 50px; }
+        .project_link { display: inline-block; margin-top: 14px; color: #c792ea; font-weight: 700; font-size: 14px; text-shadow: 0 0 8px rgba(199, 146, 234, 0.4); }
+        .project_link:hover { text-decoration: underline; }
+        .grid_3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .grid_2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .gallery_grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .gallery_grid img { width: 100%; height: 140px; object-fit: cover; border-radius: 18px; border: 1px solid #282838; transition: all 0.25s ease; }
+        .gallery_grid img:hover { transform: scale(1.04); border-color: #c792ea; box-shadow: 0 0 18px rgba(199, 146, 234, 0.35); }
+        footer { background-color: #0c0c10; padding: 30px 0; margin-top: 50px; border-top: 1px solid #22222e; text-align: center; color: #8c8c9e; font-size: 14px; }
+        footer a { color: #c792ea; margin: 0 10px; transition: color 0.2s; }
+        footer a:hover { text-shadow: 0 0 8px rgba(199, 146, 234, 0.6); }
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; }
+            .grid_3, .grid_2 { grid-template-columns: 1fr; }
+            .gallery_grid { grid-template-columns: 1fr 1fr; }
+            nav { display: none; }
+        }
+    </style>
 </head>
 <body>
 
@@ -19,7 +74,7 @@
     <header>
         <div class="container header_content">
             <div class="logo">
-                <img src="shto.png" alt="Логотип">
+                <img src="shto.png" alt="Логотип" width="36" height="36">
                 <span>proshivka</span>
             </div>
             <nav>
@@ -36,8 +91,8 @@
         <!-- Главный экран -->
         <div class="hero">
             <div class="hero_info">
-                <span class="badge">Snapdragon 865 & Google Tensor G1</span>
-                <h1>Привет, я <span class="neon_text">Иван Xiaomi</span></h1>
+                <div class="badge">Snapdragon 865 & Google Tensor G1</div>
+                <h1>Привет, я <span>Иван Xiaomi</span></h1>
                 <p>
                     Android-разработчик, реверс-инженер и энтузиаст мобильного железа. Занимаюсь низкоуровневой кастомизацией, 
                     портированием ядер (включая Apple XNU на Xiaomi Mi 10 Ultra), восстановлением окирпиченных устройств и вайбкодингом.
@@ -48,7 +103,7 @@
                 </div>
             </div>
             <div>
-                <img src="shto.png" alt="Аватарка" class="avatar">
+                <img src="shto.png" alt="Аватарка" class="avatar" width="180" height="180">
             </div>
         </div>
 
