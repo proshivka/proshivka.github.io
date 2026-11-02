@@ -1,6 +1,5 @@
 /**
- * Material 3 Expressive (Android 16) — Core Interactive Script
- * Palette: Purple / Lavender
+ * Material 3 Expressive (m3.material.io) — Interactive Script
  * proshivka.github.io — Ivan Xiaomi
  */
 
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------
     // 2. Material 3 Ripple Effect
     // ----------------------------------------------------
-    document.querySelectorAll('.m3_btn_primary, .m3_btn_tonal, .bento_card, .project_card, .step_card').forEach(el => {
+    document.querySelectorAll('.m3_btn_primary, .m3_btn_tonal, .bento_card, .skill_column_card, .project_card, .step_card').forEach(el => {
         el.addEventListener('click', function (e) {
             const ripple = document.createElement('span');
             ripple.classList.add('ripple-wave');
@@ -231,32 +230,13 @@ document.addEventListener('DOMContentLoaded', () => {
         easterEggBtn.addEventListener('click', () => {
             tapCount++;
             if (tapCount === 1) {
-                showToast('Material 3 Expressive (Android 16) 💜');
+                showToast('Material 3 Expressive 💜');
             } else if (tapCount === 3) {
-                showToast('Snapdragon 865 & Tensor G1 Mode 🚀');
+                showToast('Snapdragon 865 & Tensor G1 Flow 🚀');
             } else if (tapCount === 7) {
-                showToast('⚡ Kryo 585 & Mu Silicium UEFI Unlocked! 💻');
+                showToast('⚡ 100% Vibe Coding Mode Unlocked! 💻');
                 tapCount = 0;
             }
         });
-    }
-
-    // ----------------------------------------------------
-    // 9. Interactive Skill Bars Animation on Scroll
-    // ----------------------------------------------------
-    const skillFills = document.querySelectorAll('.skill_fill');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                skillFills.forEach(fill => {
-                    fill.style.width = fill.getAttribute('data-level') + '%';
-                });
-            }
-        });
-    }, { threshold: 0.15 });
-
-    const skillsSection = document.getElementById('skills');
-    if (skillsSection) {
-        observer.observe(skillsSection);
     }
 });
