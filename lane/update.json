@@ -1,9 +1,9 @@
 {
-  "version": "1.3.8.0",
-  "versionCode": 1030800,
+  "version": "1.3.9.0",
+  "versionCode": 1030900,
   "releaseDate": "2026-11-02",
-  "title": "LANE Music v1.3.8.0",
-  "changelog": "• Исправлено отключение музыки на экране блокировки\n• Поддержка ExtendedExecutionSession для непрерывного фона\n• Защита от системного засыпания (PLM Suspension Deferral)\n• Мгновенное бесшовное переключение треков при выключенном экране\n• OTA-обновление и скачивание в 1 тап",
+  "title": "LANE Music v1.3.9.0",
+  "changelog": "• Исправлено автопереключение треков на экране блокировки\n• Добавлен mandatory audio.load() для движка EdgeHTML\n• Фоновый Blob-буфер: защита от обрыва связи на половине трека\n• Автоматическое восстановление воспроизведения при сетевых сбоях\n• Защита от засыпания процесса (ExtendedExecutionSession)",
   "downloadUrl": "https://proshivka.github.io/lane/LaneMusic.appxbundle",
   "sourceUrl": "https://proshivka.github.io/lane/LaneMusic_Source.zip",
   "certUrl": "https://proshivka.github.io/lane/LaneMusic.cer",
