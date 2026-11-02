@@ -1,31 +1,19 @@
 /**
  * Material 3 Expressive (Android 16) — Core Interactive Script
+ * Palette: Purple / Lavender
  * proshivka.github.io — Ivan Xiaomi
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     // ----------------------------------------------------
-    // 1. Theme Engine: Dynamic Color & Dark/Light Mode
+    // 1. Dark / Light Mode Toggle
     // ----------------------------------------------------
     const root = document.documentElement;
-    const paletteDots = document.querySelectorAll('.palette_dot');
     const modeBtn = document.getElementById('modeBtn');
     const toast = document.getElementById('m3Toast');
 
-    // Load saved preferences or defaults
-    const savedTheme = localStorage.getItem('m3_theme') || 'green';
     const savedMode = localStorage.getItem('m3_mode') || 'dark';
-
-    setTheme(savedTheme);
     setMode(savedMode);
-
-    paletteDots.forEach(dot => {
-        dot.addEventListener('click', (e) => {
-            const theme = e.currentTarget.dataset.theme;
-            setTheme(theme);
-            showToast(`Палитра переключена: ${getThemeName(theme)}`);
-        });
-    });
 
     if (modeBtn) {
         modeBtn.addEventListener('click', () => {
@@ -36,18 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function setTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        localStorage.setItem('m3_theme', theme);
-        paletteDots.forEach(dot => {
-            if (dot.dataset.theme === theme) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-    }
-
     function setMode(mode) {
         root.setAttribute('data-mode', mode);
         localStorage.setItem('m3_mode', mode);
@@ -55,16 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
             modeBtn.innerHTML = mode === 'dark' 
                 ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>'
                 : '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1z"/></svg>';
-        }
-    }
-
-    function getThemeName(theme) {
-        switch (theme) {
-            case 'green': return 'Android 16 Mint 🌿';
-            case 'cyan': return 'Pixel Sky 🌊';
-            case 'orange': return 'HyperOS Orange ⚡';
-            case 'purple': return 'Cosmic Lavender 🔮';
-            default: return theme;
         }
     }
 
@@ -85,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ripple.style.top = `${y}px`;
 
             this.appendChild(ripple);
-            setTimeout(() => ripple.remove(), 600);
+            setTimeout(() => ripple.remove(), 550);
         });
     });
 
@@ -140,14 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (copyTgBtn) {
         copyTgBtn.addEventListener('click', () => {
             navigator.clipboard.writeText('@prosh1vka').then(() => {
-                showToast('Ник Telegram @prosh1vka скопирован! 📋');
+                showToast('Ник @prosh1vka скопирован! 📋');
             }).catch(() => {
                 showToast('Telegram: @prosh1vka');
             });
         });
     }
 
-    // Contact Form submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
@@ -239,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         let current = '';
-        const scrollPos = window.pageYOffset + 150;
+        const scrollPos = window.pageYOffset + 140;
 
         sections.forEach(section => {
             const top = section.offsetTop;
@@ -266,11 +231,11 @@ document.addEventListener('DOMContentLoaded', () => {
         easterEggBtn.addEventListener('click', () => {
             tapCount++;
             if (tapCount === 1) {
-                showToast('Android 16 Expressive Ready 🟢');
+                showToast('Material 3 Expressive (Android 16) 💜');
             } else if (tapCount === 3) {
-                showToast('Baklava Dev Mode Activated! 🥞');
+                showToast('Snapdragon 865 & Tensor G1 Mode 🚀');
             } else if (tapCount === 7) {
-                showToast('⚡ Kernel 6.6 Overclock: 3.4GHz Unlocked! 🚀');
+                showToast('⚡ Kryo 585 & Mu Silicium UEFI Unlocked! 💻');
                 tapCount = 0;
             }
         });
@@ -288,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.15 });
 
     const skillsSection = document.getElementById('skills');
     if (skillsSection) {
