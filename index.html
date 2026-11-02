@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт-портфолио — proshivka</title>
+    <title>proshivka — Иван Xiaomi</title>
     <link rel="icon" href="favicon.png" type="image/png">
     
-    <!-- Шрифт Roboto -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Sans Flex & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@1..144,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Шапка -->
+    <!-- Шапка сайта -->
     <header>
         <div class="container header_content">
             <div class="logo">
@@ -24,7 +27,7 @@
                 <a href="#skills">Навыки</a>
                 <a href="#projects">Проекты</a>
                 <a href="#gallery">Галерея</a>
-                <a href="https://t.me/prosh1vka" target="_blank">Контакты</a>
+                <a href="https://t.me/prosh1vka" target="_blank">Telegram</a>
             </nav>
         </div>
     </header>
@@ -34,14 +37,14 @@
         <div class="hero">
             <div class="hero_info">
                 <span class="badge">Snapdragon 865 & Google Tensor G1</span>
-                <h1>Привет, я <span class="purple">Иван Xiaomi</span></h1>
+                <h1>Привет, я <span class="neon_text">Иван Xiaomi</span></h1>
                 <p>
-                    Мне 16 лет. Увлекаюсь низкоуровневой Android разработкой, портированием прошивок, 
-                    восстановлением кирпичей и вайбкодингом. Мой стек: C, Python, HTML, JavaScript и ассемблер ARM64.
+                    Android-разработчик, реверс-инженер и энтузиаст мобильного железа. Занимаюсь низкоуровневой кастомизацией, 
+                    портированием ядер (включая Apple XNU на Xiaomi Mi 10 Ultra), восстановлением окирпиченных устройств и вайбкодингом.
                 </p>
                 <div>
                     <a href="https://t.me/prosh1vka" target="_blank" class="btn">Написать в Telegram</a>
-                    <a href="https://github.com/proshivka" target="_blank" class="btn btn_outline">Мой GitHub</a>
+                    <a href="https://github.com/proshivka" target="_blank" class="btn btn_outline">GitHub профиль</a>
                 </div>
             </div>
             <div>
@@ -49,14 +52,24 @@
             </div>
         </div>
 
+        <!-- Полоса стека -->
+        <div class="stack_box">
+            <span class="stack_title">⚡ Мой стек:</span>
+            <span class="tag">C</span>
+            <span class="tag">Python</span>
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">ASM (ARM64)</span>
+        </div>
+
         <!-- Обо мне -->
         <section id="about">
             <h2>Обо мне</h2>
             <div class="card">
                 <p>
-                    Я занимаюсь изучением мобильных чипсетов и операционных систем. Специализируюсь на сборке кастомных ядер, 
-                    портировании UEFI для проекта Mu Silicium (запуск Windows на ARM процессорах) и сервисном восстановлении телефонов.
-                    Люблю доводить железо до идеала и писать понятный полезный софт.
+                    Специализируюсь на низкоуровневой работе со смартфонами на базе процессоров Qualcomm Snapdragon 865 (Kona) и Google Tensor G1. 
+                    Интересуюсь сборкой кастомных ядер, портированием UEFI окружения (Mu Silicium), запуском альтернативных операционных систем 
+                    и раскирпичиванием устройств через аварийный режим EDL 9008 по протоколу Sahara.
                 </p>
             </div>
         </section>
@@ -66,23 +79,23 @@
             <h2>Мои навыки</h2>
             <div class="grid_3">
                 <div class="card">
-                    <h3>🔧 EDL 9008 & Sahara</h3>
+                    <h3>🔧 EDL 9008 Sahara Unbrick</h3>
                     <p>
-                        Восстановление окирпиченных устройств в аварийном режиме Qualcomm 9008, прошивка через Firehose и раскирпичивание загрузчиков.
+                        Восстановление окирпиченных устройств, которые определяются только в аварийном режиме Qualcomm 9008. Работа с лоадерами Firehose и восстановление GPT разметки.
                     </p>
                 </div>
 
                 <div class="card">
                     <h3>📱 Custom ROM & HyperOS</h3>
                     <p>
-                        Сборка кастомных прошивок под девайсы на Snapdragon 865 и Google Tensor, правка вендорных блобов, AOSP и Treble.
+                        Сборка кастомных прошивок под девайсы на Snapdragon 865 и Google Tensor, адаптация вендорных блобов, AOSP деревьев и Treble интерфейсов.
                     </p>
                 </div>
 
                 <div class="card">
                     <h3>✨ 100% Вайбкодинг</h3>
                     <p>
-                        Быстрая разработка утилит, написание скриптов на чистом интересе, эксперименты с кодом и ночные тесты прошивок.
+                        Быстрая разработка утилит, написание скриптов на чистом интересе, эксперименты с кодом и ночные тесты прошивок на реальном железе.
                     </p>
                 </div>
             </div>
@@ -92,24 +105,31 @@
         <section id="projects">
             <h2>Проекты</h2>
             <div class="grid_2">
+                <!-- Реальный публичный репозиторий -->
+                <div class="card card_featured">
+                    <span class="project_badge">Публичный репозиторий</span>
+                    <h3>ios-cas (apple-xnu)</h3>
+                    <p>
+                        Портирование ядра Apple XNU для смартфона Xiaomi Mi 10 Ultra (кодовое имя: <code>cas</code>, чипсет: <code>kona / Snapdragon 865</code>).
+                    </p>
+                    <a href="https://github.com/proshivka/ios-cas" target="_blank" class="project_link">
+                        Открыть на GitHub &rarr;
+                    </a>
+                </div>
+
                 <div class="card">
                     <h3>Mu Silicium SM8250 Port</h3>
-                    <p>Портирование UEFI окружения для запуска Windows 11 на смартфонах с процессором Snapdragon 865.</p>
+                    <p>Эксперименты по портированию UEFI прошивки для запуска Windows 11 на смартфонах с процессором Snapdragon 865.</p>
                 </div>
 
                 <div class="card">
-                    <h3>Кастомные сборки AOSP</h3>
-                    <p>Оптимизированные порты чистого Android с минимальным потреблением аккумулятора.</p>
+                    <h3>Qualcomm EDL Sahara Scripts</h3>
+                    <p>Набор служебных Python-скриптов для аварийного раскирпичивания аппаратов и прямой записи разделов.</p>
                 </div>
 
                 <div class="card">
-                    <h3>Xiaomi EDL Sahara Tool</h3>
-                    <p>Python-скрипты для раскирпичивания аппаратов и записи разметки разделов.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Твики ядра Linux</h3>
-                    <p>Настройка планировщика CPU, интеграция KernelSU и андервольтинг.</p>
+                    <h3>Kona Kernel Tweaks</h3>
+                    <p>Оптимизация параметров планировщика, интеграция KernelSU и кастомные CPU-говерноры.</p>
                 </div>
             </div>
         </section>
@@ -128,12 +148,14 @@
 
     <!-- Подвал -->
     <footer>
-        <p>&copy; 2026 Иван Xiaomi (@prosh1vka). Сайт-портфолио.</p>
+        <p>&copy; 2026 Иван Xiaomi (@prosh1vka). Портфолио разработчика.</p>
         <p>
             <a href="https://t.me/prosh1vka" target="_blank">Telegram</a> |
             <a href="https://github.com/proshivka" target="_blank">GitHub</a>
         </p>
     </footer>
 
+    <!-- Плавный скролл -->
+    <script src="js/myscript.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* Простые и понятные стили для сайта */
+/* Стили сайта proshivka с неоновым свечением и Google Sans */
 
 * {
     margin: 0;
@@ -7,9 +7,9 @@
 }
 
 body {
-    background-color: #121218;
-    color: #e0e0e0;
-    font-family: 'Roboto', sans-serif;
+    background-color: #0f0f14;
+    color: #e4e1e9;
+    font-family: 'Google Sans Flex', 'Plus Jakarta Sans', sans-serif;
     line-height: 1.6;
 }
 
@@ -26,12 +26,14 @@ a {
 
 /* Шапка сайта */
 header {
-    background-color: #1a1a24;
-    padding: 15px 0;
-    border-bottom: 1px solid #282836;
+    background-color: rgba(22, 22, 30, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 16px 0;
+    border-bottom: 1px solid #282838;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 100;
 }
 
 .header_content {
@@ -43,32 +45,37 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     font-size: 20px;
     font-weight: 700;
-    color: #bb86fc;
+    color: #c792ea;
+    text-shadow: 0 0 12px rgba(199, 146, 234, 0.5);
 }
 
 .logo img {
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
+    border: 2px solid #c792ea;
+    box-shadow: 0 0 10px rgba(199, 146, 234, 0.4);
 }
 
 nav a {
-    margin-left: 20px;
-    color: #b0b0c0;
+    margin-left: 22px;
+    color: #b0b0c2;
     font-weight: 500;
-    transition: 0.2s;
+    font-size: 15px;
+    transition: all 0.2s;
 }
 
 nav a:hover {
-    color: #bb86fc;
+    color: #c792ea;
+    text-shadow: 0 0 8px rgba(199, 146, 234, 0.6);
 }
 
 /* Главный блок (Hero) */
 .hero {
-    padding: 60px 0;
+    padding: 70px 0 50px;
     display: flex;
     align-items: center;
     gap: 40px;
@@ -79,100 +86,190 @@ nav a:hover {
 }
 
 .badge {
-    background-color: #242432;
-    color: #bb86fc;
-    padding: 5px 12px;
-    border-radius: 20px;
+    background-color: #211f2d;
+    color: #c792ea;
+    border: 1px solid rgba(199, 146, 234, 0.4);
+    box-shadow: 0 0 14px rgba(199, 146, 234, 0.2);
+    padding: 6px 14px;
+    border-radius: 50px;
     font-size: 13px;
+    font-weight: 600;
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .hero_info h1 {
-    font-size: 38px;
-    margin-bottom: 15px;
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.2;
 }
 
-.purple {
-    color: #bb86fc;
+.neon_text {
+    color: #c792ea;
+    text-shadow: 0 0 14px rgba(199, 146, 234, 0.6), 0 0 28px rgba(199, 146, 234, 0.3);
 }
 
 .hero_info p {
-    color: #a0a0b0;
+    color: #a8a8ba;
     font-size: 16px;
-    margin-bottom: 25px;
+    margin-bottom: 26px;
+    line-height: 1.65;
 }
 
 .avatar {
     width: 180px;
     height: 180px;
-    border-radius: 24px;
-    border: 3px solid #bb86fc;
+    border-radius: 28px;
+    border: 3px solid #c792ea;
+    box-shadow: 0 0 24px rgba(199, 146, 234, 0.4), 0 10px 30px rgba(0, 0, 0, 0.5);
     object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Кнопки */
+.avatar:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 32px rgba(199, 146, 234, 0.65);
+}
+
+/* Неоновые кнопки */
 .btn {
     display: inline-block;
-    background-color: #bb86fc;
-    color: #121218;
-    padding: 10px 22px;
-    border-radius: 20px;
+    background-color: #c792ea;
+    color: #12101a;
+    padding: 11px 24px;
+    border-radius: 50px;
     font-weight: 700;
-    transition: 0.2s;
+    font-size: 15px;
+    box-shadow: 0 0 16px rgba(199, 146, 234, 0.45);
+    transition: all 0.2s ease-in-out;
 }
 
 .btn:hover {
-    background-color: #d7b7fd;
+    background-color: #dbb3f6;
+    box-shadow: 0 0 25px rgba(199, 146, 234, 0.8);
     transform: translateY(-2px);
 }
 
 .btn_outline {
     background-color: transparent;
-    color: #bb86fc;
-    border: 1px solid #bb86fc;
-    margin-left: 10px;
+    color: #c792ea;
+    border: 1px solid #c792ea;
+    box-shadow: 0 0 12px rgba(199, 146, 234, 0.25);
+    margin-left: 12px;
 }
 
 .btn_outline:hover {
-    background-color: #242432;
+    background-color: #211f2d;
+    box-shadow: 0 0 20px rgba(199, 146, 234, 0.5);
 }
 
-/* Секции и заголовки */
+/* Стек полоса */
+.stack_box {
+    background-color: #161620;
+    border: 1px solid #282838;
+    border-radius: 20px;
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.stack_title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #c792ea;
+    text-shadow: 0 0 8px rgba(199, 146, 234, 0.4);
+}
+
+.tag {
+    background-color: #201f2c;
+    border: 1px solid #363448;
+    color: #e4e1e9;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Секции и карточки со скруглением и неоном */
 section {
     padding: 40px 0;
 }
 
 h2 {
     font-size: 28px;
-    margin-bottom: 25px;
+    font-weight: 700;
+    margin-bottom: 24px;
     text-align: center;
-    color: #bb86fc;
+    color: #c792ea;
+    text-shadow: 0 0 14px rgba(199, 146, 234, 0.45);
 }
 
-/* Карточки со скруглением */
 .card {
-    background-color: #1a1a24;
-    border: 1px solid #2a2a3a;
-    border-radius: 20px;
-    padding: 22px;
-    transition: 0.2s;
+    background-color: #161620;
+    border: 1px solid #282838;
+    border-radius: 22px;
+    padding: 24px;
+    transition: all 0.25s ease;
+    position: relative;
 }
 
 .card:hover {
-    border-color: #bb86fc;
-    transform: translateY(-3px);
+    border-color: #c792ea;
+    box-shadow: 0 0 20px rgba(199, 146, 234, 0.25);
+    transform: translateY(-4px);
 }
 
 .card h3 {
     margin-bottom: 10px;
     font-size: 18px;
+    font-weight: 700;
     color: #fff;
 }
 
 .card p {
-    color: #a0a0b0;
+    color: #a4a4b8;
     font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Карточка открытого репо (выделенная) */
+.card_featured {
+    border: 1.5px solid #c792ea;
+    box-shadow: 0 0 16px rgba(199, 146, 234, 0.3);
+}
+
+.card_featured:hover {
+    box-shadow: 0 0 28px rgba(199, 146, 234, 0.55);
+}
+
+.project_badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #c792ea;
+    color: #12101a;
+    padding: 3px 10px;
+    border-radius: 50px;
+}
+
+.project_link {
+    display: inline-block;
+    margin-top: 14px;
+    color: #c792ea;
+    font-weight: 700;
+    font-size: 14px;
+    text-shadow: 0 0 8px rgba(199, 146, 234, 0.4);
+}
+
+.project_link:hover {
+    text-decoration: underline;
 }
 
 /* Сетки */
@@ -192,47 +289,58 @@ h2 {
 .gallery_grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    gap: 16px;
 }
 
 .gallery_grid img {
     width: 100%;
-    height: 130px;
+    height: 140px;
     object-fit: cover;
-    border-radius: 16px;
-    border: 1px solid #2a2a3a;
-    transition: 0.2s;
+    border-radius: 18px;
+    border: 1px solid #282838;
+    transition: all 0.25s ease;
 }
 
 .gallery_grid img:hover {
     transform: scale(1.04);
+    border-color: #c792ea;
+    box-shadow: 0 0 18px rgba(199, 146, 234, 0.35);
 }
 
 /* Подвал */
 footer {
-    background-color: #0e0e14;
-    padding: 25px 0;
-    margin-top: 40px;
-    border-top: 1px solid #242432;
+    background-color: #0c0c10;
+    padding: 30px 0;
+    margin-top: 50px;
+    border-top: 1px solid #22222e;
     text-align: center;
-    color: #888899;
+    color: #8c8c9e;
     font-size: 14px;
 }
 
 footer a {
-    color: #bb86fc;
+    color: #c792ea;
     margin: 0 10px;
+    transition: color 0.2s;
 }
 
-/* Адаптив для телефонов */
+footer a:hover {
+    text-shadow: 0 0 8px rgba(199, 146, 234, 0.6);
+}
+
+/* Адаптив */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
         text-align: center;
     }
 
-    .grid_3, .grid_2, .gallery_grid {
+    .grid_3, .grid_2 {
         grid-template-columns: 1fr;
+    }
+
+    .gallery_grid {
+        grid-template-columns: 1fr 1fr;
     }
 
     nav {
